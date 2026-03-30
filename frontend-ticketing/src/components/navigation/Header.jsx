@@ -66,7 +66,7 @@ const Header = ({ sidebarCollapsed, toggleSidebar, title = null }) => {
           <div className="header-brand">
             <Logo className="header-logo-icon" aria-hidden="true" />
             <span className="header-logo-text">
-              {title || "Ticketing System2"}
+              {title || "Ticketing System"}
             </span>
           </div>
         </div>

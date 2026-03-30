@@ -21,12 +21,11 @@ const Sidebar = ({ collapsed }) => {
   const user = authService.getUser();
   const role = user?.role;
 
-  const isPathActive = (path) => location.pathname === path;
+  const isPathActive = (path) =>
+    location.pathname === path || location.pathname.startsWith(path + "/");
 
   const isPathInTree = (paths = []) =>
-    paths.some(
-      (p) => location.pathname === p || location.pathname.startsWith(p + "/")
-    );
+    paths.some((p) => isPathActive(p));
 
   // ====== MENU CONFIG (WITH CHILDREN) ======
   const menuItems = useMemo(
